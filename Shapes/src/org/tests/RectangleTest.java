@@ -10,7 +10,7 @@ public class RectangleTest {
 	private Rectangle rec;
 	
 	public RectangleTest(){
-		rec = new Rectangle(10, 10, 100, 100);
+		rec = new Rectangle(100, 100);
 	}
 
 	@Test

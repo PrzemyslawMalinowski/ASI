@@ -4,20 +4,24 @@ import org.interfaces.Shape;
 
 public class Rotated implements Shape {
 	
-	protected float f1;
-	protected float f2;
+	protected float x;
+	protected float y;
 	protected float angle;
 	protected Shape shape;
 	
-	Rotated(float x, float y, float angle, Shape shape){
-		this.f1 = x;
-		this.f2 = y;
+	public Rotated(float x, float y, float angle, Shape shape){
+		this.x = x;
+		this.y = y;
 		this.angle = angle;
+		this.shape = shape;
 	}
 
 	@Override
 	public boolean contains(float x, float y) {
-		return shape.contains(x, y);
+		float x2 = (float)((this.x - x) * Math.cos(angle) - (this.y - y) * Math.sin(angle));
+		float y2 = (float)((this.x - x) * Math.sin(angle) - (this.y - y) * Math.cos(angle));
+		
+		return shape.contains(x2, y2);
 	}
 
 	@Override

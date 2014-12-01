@@ -2,23 +2,21 @@ package org.classes;
 
 import org.interfaces.Shape;
 
-public class Translated extends Position implements Shape {
+public class Translated implements Shape {
 	
 	protected Shape shape;
-	
-	protected float f1;
-	protected float f2;
+	private float x;
+	private float y;
 	
 	public Translated(float x, float y, Shape shape){
-		this.f1 = x;
-		this.f2 = y;
+		this.x = x;
+		this.y = y;
 		this.shape = shape;
 	}
 
 	@Override
 	public boolean contains(float x, float y) {
-		// TODO Auto-generated method stub
-		return false;
+		return shape.contains(x - this.x, y - this.y);
 	}
 
 	@Override

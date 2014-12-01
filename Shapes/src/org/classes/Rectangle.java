@@ -6,21 +6,19 @@ import java.util.List;
 
 import org.interfaces.Shape;
 
-public class Rectangle extends Position implements Shape {
+public class Rectangle implements Shape {
 
 	private float a;
 	private float b;
 
-	public Rectangle(float x, float y, float a, float b) {
-		this.x = x;
-		this.y = y;
+	public Rectangle(float a, float b) {
 		this.a = a;
 		this.b = b;
 	}
 
 	@Override
 	public boolean contains(float x, float y) {
-		return (this.x < x && x < this.x + a) && (this.y < y && y < this.y + b) ? true : false;
+		return (-0.5 * a < x && x < 0.5 * a) && (-0.5 < y && y < 0.5 + b) ? true : false;
 	}
 
 	@Override

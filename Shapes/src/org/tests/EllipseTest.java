@@ -10,7 +10,7 @@ public class EllipseTest {
 	private Elipse el;
 	
 	public EllipseTest() {
-		el = new Elipse(10, 10, 50, 50);
+		el = new Elipse(50, 50);
 	}
 
 	@Test

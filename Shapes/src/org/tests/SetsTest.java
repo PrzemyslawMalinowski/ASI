@@ -19,8 +19,8 @@ public class SetsTest {
 	private Shape s2;
 
 	public SetsTest() {
-		s1 = new Rectangle(0, 0, 10, 10);
-		s2 = new Elipse(10, 10, 1, 2);
+		s1 = new Rectangle(10, 10);
+		s2 = new Elipse(1, 2);
 
 		inter = new Intersection(s1, s2);
 		diff = new Difference(s1, s2);
