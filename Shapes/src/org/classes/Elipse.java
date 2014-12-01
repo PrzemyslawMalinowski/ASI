@@ -8,8 +8,11 @@ public class Elipse extends Position implements Shape {
 	protected int r2;
 
 	@Override
-	public boolean contains(float x, float y) {
-		return false;
+	public boolean contains(float x, float y) {	
+		x = x - this.x;
+		y = y - this.y;
+		return (Math.pow(x, 2) / Math.pow(r1, 2) + 
+				Math.pow(y, 2) / Math.pow(r2, 2)) < 1 ? true : false;
 	}
 	
 	public Elipse(int x, int y, int r1, int r2) {
